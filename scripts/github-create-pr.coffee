@@ -2,7 +2,7 @@
 #   Create pull requests in Github repository
 #
 # Commands:
-# hubot deploy <repo_name>/<head> into <base> - create pull request
+# <hubot_name> create pr <repo_name>/head to <base> - create a new pull request
 
 module.exports = (robot) ->
   github = require("githubot")(robot)
