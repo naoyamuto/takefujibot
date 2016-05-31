@@ -4,5 +4,7 @@ set -e
 
 npm install
 export PATH="node_modules/.bin:node_modules/hubot/node_modules/.bin:$PATH"
+export HUBOT_GITHUB_TOKEN="4f6cbbd2504e7241416ce2e9a6a43499e7518364"
+
 
 exec node_modules/.bin/hubot --name "takefujibot" "$@"

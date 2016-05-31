@@ -21,10 +21,10 @@ module.exports = (robot) ->
       dd = "0" + dd
     yyyy + '/' + mm + '/' + dd
 
-  robot.respond /deploy ([-_\.0-9a-zA-Z]+)(\/([-_\.a-zA-z0-9\/]+))? into ([-_\.a-zA-z0-9\/]+)$/i, (msg) ->
+  robot.respond /create pr ([-_\.0-9a-zA-Z]+)(\/([-_\.a-zA-z0-9\/]+))? to ([-_\.a-zA-z0-9\/]+)$/i, (msg) ->
     repo = msg.match[1]
-    head = msg.match[3] || "master"
-    base = msg.match[4]
+    head = msg.match[3]
+    base = msg.match[4] || "master"
     url = "#{url_api_base}/repos/naoyamuto/#{repo}/pulls"
 
     account_name = msg.envelope.user.name || "anonymous"
