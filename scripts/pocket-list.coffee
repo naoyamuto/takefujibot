@@ -53,7 +53,6 @@ module.exports = (robot) ->
       return msg.send err if err
 
       data = JSON.parse(body).list
-      msg.send JSON.stringify(data)
       result = ""
 
       Object.keys(data).forEach (key) ->
