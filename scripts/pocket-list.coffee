@@ -14,8 +14,9 @@ module.exports = (robot) ->
 
   consumer_key = process.env.HUBOT_POCKET_KEY
   access_token = process.env.HUBOT_POCKET_TOKEN
+  url = "https://getpocket.com/v3/get"
 
-  # show pocket lists
+  # Show pocket lists
   robot.respond /show pocket lists$/i, (msg) ->
 
     params = {
@@ -25,7 +26,7 @@ module.exports = (robot) ->
       "contentType": "article"
     }
 
-    robot.http("https://getpocket.com/v3/get").query(params).get() (err, res, body) ->
+    robot.http(url).query(params).get() (err, res, body) ->
 
       return msg.send err if err
       data = JSON.parse(body).list
@@ -49,7 +50,7 @@ module.exports = (robot) ->
       "search": query
     }
 
-    robot.http("https://getpocket.com/v3/get").query(params).get() (err, res, body) ->
+    robot.http(url).query(params).get() (err, res, body) ->
       return msg.send err if err
 
       data = JSON.parse(body).list
