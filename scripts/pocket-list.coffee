@@ -1,5 +1,5 @@
 # Description:
-#   Create pull requests in Github repository
+#
 #
 # Commands:
 #   <hubot_name> show pocket lists - show pocket lists
