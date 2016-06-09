@@ -13,7 +13,6 @@ module.exports = (robot) ->
     query = msg.match[1]
     params = {
       "keyword": query,
-      "order": 2,
       "count": 5
     }
     robot.http(url).query(params).get() (err, res, body) ->
