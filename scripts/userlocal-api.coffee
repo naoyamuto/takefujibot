@@ -10,7 +10,7 @@ module.exports = (robot) ->
   url = "https://chatbot-api.userlocal.jp/api/chat"
   api_key = process.env.HUBOT_USERLOCAL_API_KEY
 
-  robot.respond /(.*)/i, (msg) ->
+  robot.respond /(\W*)/i, (msg) ->
 
     message = msg.match[1]
     params = {
